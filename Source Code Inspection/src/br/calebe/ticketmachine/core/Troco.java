@@ -7,7 +7,7 @@ import java.util.Iterator;
  * @author Calebe de Paula Bianchini
  * @author Leonardo Hengler
  */
-class Troco {
+public class Troco {
 
     protected PapelMoeda[] papeisMoeda;
 
@@ -33,7 +33,7 @@ class Troco {
     }
 
     public Iterator<PapelMoeda> getIterator() {
-        return new TrocoIterator(this);
+        return new Troco.TrocoIterator(this);
     }
 
     class TrocoIterator implements Iterator<PapelMoeda> {
@@ -48,6 +48,7 @@ class Troco {
         public boolean hasNext() {
             for (int i = 5; i >= 0; i--) {
                 if (troco.papeisMoeda[i] != null) {
+                    //troco.papeisMoeda[i] = null;
                     return true;
                 }
             }
@@ -61,9 +62,11 @@ class Troco {
                 if (troco.papeisMoeda[i] != null) {
                     ret = troco.papeisMoeda[i];
                     troco.papeisMoeda[i] = null;
+                    return ret;
                 }
             }
-            return ret;
+            //return ret;
+            return null;
         }
 
         @Override
