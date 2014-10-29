@@ -35,7 +35,7 @@ public class TrocoTest {
      * Test of getIterator method, of class Troco.
      */
     @Test
-    public void getIteratorTest(){
+    public void getIteratorTestValido(){
         
         PapelMoeda[] papelMoedaList = new PapelMoeda[6];
         papelMoedaList[5] = new PapelMoeda(100, 0);
@@ -55,5 +55,10 @@ public class TrocoTest {
             //System.out.println("VALOR - : " + ((PapelMoeda)next).getValor());
             i--;
         }
+    }
+    
+    @Test(expected = Exception.class)
+    public void getIteratorTestInvalido(){
+        Troco troco = new Troco(-5);
     }
 }
