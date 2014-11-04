@@ -40,18 +40,14 @@ public class PapelMoedaTest {
      */
     @Test
     public void testGetValorValido() {
-        System.out.println("getValor");
         PapelMoeda instance = new PapelMoeda(100, 100);
         int expResult = 100;
         int result = instance.getValor();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
     @Test(expected = Exception.class)
     public void testGetValorInvalido() {
-        System.out.println("getValor");
         PapelMoeda instance = new PapelMoeda(-100, 100);
     }
 
@@ -60,18 +56,14 @@ public class PapelMoedaTest {
      */
     @Test
     public void testGetQuantidadeValido() {
-        System.out.println("getQuantidade");
         PapelMoeda instance = new PapelMoeda(100, 100);
         int expResult = 100;
         int result = instance.getQuantidade();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
     }
     
     @Test(expected = Exception.class)
     public void testGetQuantidadeInvalido() {
-        System.out.println("getQuantidade");
         PapelMoeda instance = new PapelMoeda(100, -100);
     }
 }

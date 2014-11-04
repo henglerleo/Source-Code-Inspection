@@ -51,8 +51,6 @@ public class TrocoTest {
             Object next = result.next();
             assertEquals(papelMoedaList[i].getQuantidade(), ((PapelMoeda)next).getQuantidade());
             assertEquals(papelMoedaList[i].getValor(), ((PapelMoeda)next).getValor());
-            //System.out.println("QUANTIDADE - : " + ((PapelMoeda)next).getQuantidade());
-            //System.out.println("VALOR - : " + ((PapelMoeda)next).getValor());
             i--;
         }
     }
