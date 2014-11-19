@@ -40,6 +40,21 @@ public class TicketMachineTest {
     /**
      * Test of inserir method, of class TicketMachine.
      */
+    //TESTE DOS CAMINHOS ..57  E .. 234...
+    @Test
+    public void testInserirCam1() throws Exception {
+        int quantia = 2;
+        TicketMachine instance = new TicketMachine(3);
+        instance.inserir(quantia);
+        assertEquals(instance.getSaldo(), quantia);        
+    }
+    //TESTE DOS CAMINHOS ..56 E ..232...
+    @Test(expected = Exception.class)
+    public void testInserirCam2() throws Exception {
+        int quantia = 3;
+        TicketMachine instance = new TicketMachine(3);
+        instance.inserir(quantia);   
+    }
     @Test
     public void testInserirValido() throws Exception {
         int quantia = 20;
@@ -123,6 +138,27 @@ public class TicketMachineTest {
         
         String result = instance.imprimir();
         assertEquals(expResult, result);
+    }
+    
+    //teste do caminho 1234567
+    @Test
+    public void testImprimirCam1() throws Exception {
+        TicketMachine instance = new TicketMachine(3);
+        instance.inserir(20);
+        String expResult = "*****************\n";
+               expResult += "*** R$ " + instance.getSaldo() + ",00 ****\n";
+               expResult += "*****************\n";
+        
+        String result = instance.imprimir();
+        assertEquals(expResult, result);
+    }
+    
+    //teste do caminho 12
+    @Test(expected = Exception.class)
+    public void testImprimirCam2() throws Exception {
+        TicketMachine instance = new TicketMachine(3);
+        instance.inserir(-20);
+        instance.imprimir();
     }
     
     @Test(expected = Exception.class)

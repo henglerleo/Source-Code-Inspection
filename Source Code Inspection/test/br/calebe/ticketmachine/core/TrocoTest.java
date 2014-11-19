@@ -59,4 +59,28 @@ public class TrocoTest {
     public void getIteratorTestInvalido(){
         Troco troco = new Troco(-5);
     }
+    
+    //testa o caminho ..23  ..231...
+    @Test
+    public void hasNexttCam1(){
+        Troco troco = new Troco(150);
+        assertEquals(troco.getIterator().hasNext(), true);
+    }
+    
+    @Test
+    public void hasNexttCam2(){
+        Troco troco = new Troco(0);
+        Iterator it;
+        it = troco.getIterator();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        it.next();
+        
+        assertEquals(it.hasNext(), false);
+    }
 }
